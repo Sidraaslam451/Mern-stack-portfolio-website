@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { trackDownload, getDownloadStats } from "../controllers/resume.controller.js";
-import { protect } from "../middleware/auth.middleware.js";
+import { trackDownload, getDownloadStats } from "../controllers/Resume.controller.js";
+import { protect } from "../middleware/Auth.middleware.js";
  
 const router = Router();
 router.post("/download", trackDownload);

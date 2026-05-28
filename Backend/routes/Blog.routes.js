@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { getAllBlogs, getBlog, createBlog, updateBlog, deleteBlog, getAllBlogsAdmin } from "../controllers/blog.controller.js";
-import { protect } from "../middleware/auth.middleware.js";
+import { getAllBlogs, getBlog, createBlog, updateBlog, deleteBlog, getAllBlogsAdmin } from "../controllers/Blog.controller.js";
+import { protect } from "../middleware/Auth.middleware.js";
  
 const router = Router();
 router.get("/", getAllBlogs);

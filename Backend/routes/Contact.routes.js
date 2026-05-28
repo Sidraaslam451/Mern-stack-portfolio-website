@@ -3,8 +3,8 @@ import {
   sendContact,
   getAllContacts,
   markAsRead,
-} from "../controllers/contact.controller.js";
-import { protect } from "../middleware/auth.middleware.js";
+} from "../controllers/Contact.controller.js";
+import { protect } from "../middleware/Auth.middleware.js";
 
 const router = Router();
 router.post("/", sendContact);
