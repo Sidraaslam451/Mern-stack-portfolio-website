@@ -35,15 +35,26 @@ app.use(express.static("public"));
 
 // Middlewares
 app.use(helmet());
+// app.use(
+//   cors({
+//     origin: [
+//       process.env.FRONTEND_URL || "http://localhost:5173",
+//       "https://frontend-sigma-two-y4o9bgl5z3.vercel.app",
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+//     credentials: true,
+//   }),
+// );
+
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL || "http://localhost:5173",
-      "https://frontend-sigma-two-y4o9bgl5z3.vercel.app",
+      "http://localhost:5173",
+      "https://frontend-sigma-two-y4o9bgl5z3.vercel.app/",
     ],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     credentials: true,
-  }),
+  })
 );
 
 const limiter = rateLimit({
