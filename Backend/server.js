@@ -39,7 +39,7 @@ app.use(
   cors({
     origin: [
       process.env.FRONTEND_URL || "http://localhost:5173",
-      "https://your-portfolio.vercel.app",
+      "https://frontend-sigma-two-y4o9bgl5z3.vercel.app/admin",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
