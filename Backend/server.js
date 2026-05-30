@@ -46,14 +46,22 @@ app.use(helmet());
 //   }),
 // );
 
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://frontend-sigma-two-y4o9bgl5z3.vercel.app/",
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+//     credentials: true,
+//   })
+// );
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://frontend-sigma-two-y4o9bgl5z3.vercel.app/",
-    ],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    credentials: true,
+    credentials: false,
   })
 );
 
