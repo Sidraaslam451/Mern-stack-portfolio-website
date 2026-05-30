@@ -35,35 +35,16 @@ app.use(express.static("public"));
 
 // Middlewares
 app.use(helmet());
-// app.use(
-//   cors({
-//     origin: [
-//       process.env.FRONTEND_URL || "http://localhost:5173",
-//       "https://frontend-sigma-two-y4o9bgl5z3.vercel.app",
-//     ],
-//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-//     credentials: true,
-//   }),
-// );
 
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:5173",
-//       "https://frontend-sigma-two-y4o9bgl5z3.vercel.app/",
-//     ],
-//     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-//     credentials: true,
-//   })
-// );
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false,
+}));
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    credentials: false,
-  })
-);
+// OPTIONS preflight handle karo
+app.options("*", cors());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
