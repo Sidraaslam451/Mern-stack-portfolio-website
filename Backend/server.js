@@ -44,7 +44,7 @@ app.use(cors({
 }));
 
 // OPTIONS preflight handle karo
-app.options("*", cors());
+app.options(/(.*)/, cors());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
